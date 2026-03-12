@@ -48,14 +48,7 @@ class AgentGraphFactory:
             payload=state["tool_payload"],
             session_id=state["session_id"],
         )
-        return {
-            "tool_result": {
-                "tool_name": result.tool_name,
-                "success": result.success,
-                "message": result.message,
-                "data": result.data,
-            }
-        }
+        return {"tool_result": result}
 
     def response_node(self, state: AgentState) -> AgentState:
         tool_result = state["tool_result"]

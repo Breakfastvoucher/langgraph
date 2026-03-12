@@ -16,13 +16,13 @@
 
 ## 2) Tool 模板
 
-已内置 3 个可扩展工具：
+已内置 3 个基于 `@tool` 的可扩展工具：
 
 - `knowledge_query`
 - `report_generator`
 - `task_logger`
 
-所有工具都通过 `ToolGateway` 调用，LLM/Graph 不直接访问系统或数据库。
+所有工具都使用 `langchain_core.tools.tool` 装饰器定义，并通过 `ToolGateway` 调用，LLM/Graph 不直接访问系统或数据库。
 
 ## 3) Memory 与 Checkpointer
 
